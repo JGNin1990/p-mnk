@@ -6,6 +6,8 @@ import Hero from "./sections/Hero";
 import Ido from "./sections/Ido";
 import Nav from "./sections/Nav";
 import Summary from "./sections/Summary";
+import "animate.css";
+
 
 const App = () => {
   return (

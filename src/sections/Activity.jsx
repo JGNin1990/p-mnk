@@ -7,6 +7,7 @@ import ac6 from "../images/ac6.jpg";
 import ac7 from "../images/ac7.jpg";
 import ac8 from "../images/ac8.jpg";
 import ac9 from "../images/ac9.jpg";
+import { useInView } from "react-intersection-observer";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -81,17 +82,23 @@ const acData = [
 ];
 
 const Activity = () => {
+  const { ref, inView } = useInView();
+
   return (
     <>
-      <div id="activity" className="pt-32 w-full">
+      <div id="activity" className="pt-32 w-full" ref={ref}>
         <div className="c-con">
-          <h4 className="text-pri font-semibold tracking-[0.3rem] text-[22px] lg:text-[28px] text-center sm:text-left">
-            Visit My Portfolio
-          </h4>
-          <h1 className="font-semibold text-[35px] lg:text-[44px] text-center sm:text-left" >
-            Team Activity
-          </h1>
-          <span className="bg-pri h-2 w-24 block rounded-lg mt-2 mb-8 sm:mb-16 mx-auto sm:mx-0" ></span>
+          <div
+            className={`animate__animated + ${inView && "animate__fadeInLeft"}`}
+          >
+            <h4 className="text-pri font-semibold tracking-[0.3rem] text-[22px] lg:text-[28px] text-center sm:text-left">
+              Visit My Portfolio
+            </h4>
+            <h1 className="font-semibold text-[35px] lg:text-[44px] text-center sm:text-left">
+              Team Activity
+            </h1>
+            <span className="bg-pri h-2 w-24 block rounded-lg mt-2 mb-8 sm:mb-16 mx-auto sm:mx-0"></span>
+          </div>
 
           {/* swiper section */}
           {/* <div className="">
@@ -108,7 +115,11 @@ const Activity = () => {
               </div>
             </div>
           </div> */}
-          <div className="flex flex-row justify-center">
+          <div
+            className={`flex flex-row justify-center animate__animated + ${
+              inView && "animate__fadeInRight"
+            }`}
+          >
             <Swiper
               slidesPerView={3}
               spaceBetween={70}

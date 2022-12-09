@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ido from "../images/ido.jpg";
+import { useInView } from "react-intersection-observer";
 
 const Ido = () => {
   const [active, setActive] = useState({
@@ -8,20 +9,28 @@ const Ido = () => {
     three: false,
   });
 
+  const { ref, inView } = useInView();
+
   return (
     <>
-      <div id="do" className="pt-32 w-full">
+      <div id="do" className="pt-32 w-full" ref={ref}>
         <div className="c-con">
-          <h4 className="text-pri font-semibold tracking-[0.3rem] text-[22px] xl:text-[28px] text-center sm:text-left">
-            I Work for
-          </h4>
-          <h1 className="font-semibold text-[35px] xl:text-[44px] text-center sm:text-left">
-            What I Do
-          </h1>
-          <span className="bg-pri h-2 w-24 block rounded-lg mt-2 mb-16 mx-auto sm:mx-0"></span>
+          <div
+            className={`animate__animated + ${inView && "animate__fadeInLeft"}`}
+          >
+            <h4 className="text-pri font-semibold tracking-[0.3rem] text-[22px] xl:text-[28px] text-center sm:text-left">
+              I Work for
+            </h4>
+            <h1 className="font-semibold text-[35px] xl:text-[44px] text-center sm:text-left">
+              What I Do
+            </h1>
+            <span className="bg-pri h-2 w-24 block rounded-lg mt-2 mb-16 mx-auto sm:mx-0"></span>
+          </div>
           <div className="c-flex justify-center md:justify-between flex-wrap">
             <div
-              className="w-[60%] md:w-[31%]  overflow-hidden rounded-md relative cursor-pointer shadow-lg duration-500 hover:scale-105"
+              className={`w-[60%] md:w-[31%]  overflow-hidden rounded-md relative cursor-pointer shadow-lg duration-500 hover:scale-105 animate__animated + ${
+                inView && "animate__fadeInLeftBig"
+              }`}
               onClick={() => setActive((e) => ({ ...e, one: !active.one }))}
             >
               <div className="w-full">
@@ -48,7 +57,9 @@ const Ido = () => {
               </div>
             </div>
             <div
-              className="w-[60%] md:w-[31%] mt-10 md:mt-0   overflow-hidden rounded-md relative cursor-pointer shadow-lg duration-500 hover:scale-105"
+              className={`w-[60%] md:w-[31%] mt-10 md:mt-0   overflow-hidden rounded-md relative cursor-pointer shadow-lg duration-500 hover:scale-105 animate__animated + ${
+                inView && "animate__fadeInDownBig"
+              }`}
               onClick={() => setActive((e) => ({ ...e, two: !active.two }))}
             >
               <div className="w-full">
@@ -75,7 +86,9 @@ const Ido = () => {
               </div>
             </div>
             <div
-              className="w-[60%] md:w-[31%] mt-10 md:mt-0   overflow-hidden rounded-md relative cursor-pointer shadow-lg duration-500 hover:scale-105"
+              className={`w-[60%] md:w-[31%] mt-10 md:mt-0   overflow-hidden rounded-md relative cursor-pointer shadow-lg duration-500 hover:scale-105 animate__animated + ${
+                inView && "animate__fadeInRightBig"
+              }`}
               onClick={() => setActive((e) => ({ ...e, three: !active.three }))}
             >
               <div className="w-full">

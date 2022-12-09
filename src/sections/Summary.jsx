@@ -1,15 +1,23 @@
 import React from "react";
+import { useInView } from "react-intersection-observer";
 
 const Summary = () => {
+  const { ref, inView } = useInView();
   return (
     <>
-      <div id="3" className="w-full pt-10 lg:pt-32">
+      <div className="w-full pt-10 lg:pt-32" ref={ref}>
         <div className="c-con">
-          <h1 className="text-pri text-[20px] lg:text-[28px] font-semibold tracking-[0.3rem] py-10">
-            Summary
-          </h1>
+          <div className={`animate__animated animate__fadeInLeft`}>
+            <h1 className="text-pri text-[20px] lg:text-[28px] font-semibold tracking-[0.3rem] py-10">
+              Summary
+            </h1>
+          </div>
           <div className="c-flex flex-wrap justify-evenly">
-            <div className="w-[80%] sm:w-[60%] md:w-[35%] flex flex-col">
+            <div
+              className={`w-[80%] sm:w-[60%] md:w-[35%] flex flex-col + ${
+                inView && "animate__animated animate__zoomIn"
+              }`}
+            >
               <h1 className="text-[27px] lg:text-[35px] font-semibold pb-7">
                 My Education
               </h1>
@@ -42,7 +50,11 @@ const Summary = () => {
                 </p>
               </div>
             </div>
-            <div className="w-[80%] sm:w-[60%]  md:w-[35%] flex flex-col mt-[40px] md:mt-0">
+            <div
+              className={`w-[80%] sm:w-[60%]  md:w-[35%] flex flex-col mt-[40px] md:mt-0 + ${
+                inView && "animate__animated animate__zoomIn"
+              }`}
+            >
               <h1 className="text-[27px] lg:text-[35px] font-semibold pb-7">
                 My Exprience
               </h1>

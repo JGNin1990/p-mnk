@@ -3,11 +3,19 @@ import { FiFacebook, FiLinkedin, FiTwitter } from "react-icons/fi";
 import { SlArrowUp } from "react-icons/sl";
 import { NavLink } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
+import { useInView } from "react-intersection-observer";
 
 const Footer = () => {
+  const { ref, inView } = useInView();
   return (
     <>
-      <div id="footer" className="mt-32 w-full bg-[#343A40]">
+      <div
+        id="footer"
+        className={`mt-32 w-full bg-[#343A40] animate__animated + ${
+          inView && "animate__flipInX"
+        }`}
+        ref={ref}
+      >
         <div className="c-con pt-14 text-white relative">
           <HashLink to={"#"}>
             <div className="c-flex justify-center md:justify-start">
