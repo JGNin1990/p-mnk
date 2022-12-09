@@ -55,19 +55,19 @@ const Nav = () => {
         <div className={`duration-500 + ${tog ? `scale-y-100` : `scale-y-0 `}`}>
           <div className="bg-gray-800 w-full min-h-[50vh] absolute top-0 flex flex-col justify-center items-center text-[20px] md:text-[30px] font-semibold text-white">
             <div className="py-2 duration-500 hover:scale-105 cursor-pointer">
-              Home
+              <HashLink to={"/#"}>Home</HashLink>
             </div>
 
             <div className="py-2 duration-500 hover:scale-105 cursor-pointer">
-              About
+              <HashLink to={"/#about"}>About</HashLink>
             </div>
 
             <div className="py-2 duration-500 hover:scale-105 cursor-pointer">
-              What I Do
+              <HashLink to={"/#do"}>What I Do</HashLink>
             </div>
 
             <div className="py-2 duration-500 hover:scale-105 cursor-pointer">
-              Team Activity
+              <HashLink to={"/#activity"}>Team Activity</HashLink>
             </div>
 
             <div className="py-5 duration-500 hover:scale-105 cursor-pointer">
