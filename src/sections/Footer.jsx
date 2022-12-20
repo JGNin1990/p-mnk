@@ -12,7 +12,7 @@ const Footer = () => {
       <div
         id="footer"
         className={`mt-32 w-full bg-[#343A40] animate__animated + ${
-          inView && "animate__flipInX"
+          inView && "animate__pulse"
         }`}
         ref={ref}
       >
@@ -58,7 +58,7 @@ const Footer = () => {
           </p>
 
           {/* up btn */}
-          <HashLink to={"#"}>
+          <HashLink smooth to={"#"}>
             <div className="hover:bg-pri hover:text-white p-5 rounded-full cursor-pointer border-2 text-pri border-pri duration-500 absolute lg:top-[140px] lg:right-[250px] top-[25%] right-[17%] hidden md:block">
               <SlArrowUp className="text-[30px]" />
             </div>

@@ -19,63 +19,63 @@ const acData = [
   {
     id: 1,
     img: ac1,
-    title: "Title Hello",
+    title: "Cycling",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi perspiciatis distinctio consectetur.",
   },
   {
     id: 2,
     img: ac2,
-    title: "Title Hello",
+    title: "Video graph and blogger",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi perspiciatis distinctio consectetur.",
   },
   {
     id: 3,
     img: ac5,
-    title: "Title Hello",
+    title: "Travelling and Hiking",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi perspiciatis distinctio consectetur.",
   },
   {
     id: 4,
     img: ac7,
-    title: "Title Hello",
+    title: "Team building Cooking",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi perspiciatis distinctio consectetur.",
   },
   {
     id: 5,
     img: ac3,
-    title: "Title Hello",
+    title: "Drawing",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi perspiciatis distinctio consectetur.",
   },
   {
     id: 6,
     img: ac6,
-    title: "Title Hello",
+    title: "Drawing",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi perspiciatis distinctio consectetur.",
   },
   {
     id: 7,
     img: ac8,
-    title: "Title Hello",
+    title: "Education Sharing ",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi perspiciatis distinctio consectetur.",
   },
   {
     id: 8,
     img: ac4,
-    title: "Title Hello",
+    title: "Relaxing",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi perspiciatis distinctio consectetur.",
   },
   {
     id: 9,
     img: ac9,
-    title: "Title Hello",
+    title: "Medical treatment ",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi perspiciatis distinctio consectetur.",
   },
@@ -88,9 +88,7 @@ const Activity = () => {
     <>
       <div id="activity" className="pt-32 w-full" ref={ref}>
         <div className="c-con">
-          <div
-            className={`animate__animated + ${inView && "animate__fadeInLeft"}`}
-          >
+          <div className={`animate__animated + ${inView && "animate__pulse"}`}>
             <h4 className="text-pri font-semibold tracking-[0.3rem] text-[22px] lg:text-[28px] text-center sm:text-left">
               Visit My Portfolio
             </h4>
@@ -101,23 +99,10 @@ const Activity = () => {
           </div>
 
           {/* swiper section */}
-          {/* <div className="">
-            <div className="w-[400px] c-sh p-5 rounded-md">
-              <div className="overflow-hidden rounded-md">
-                <img src={ac1} alt="" />
-              </div>
-              <div className="mt-8">
-                <h1 className="text-[26px] font-semibold pb-1">Title Hello</h1>
-                <p className="text-[15px] font-medium leading-[22px] pb-3">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
-                  perspiciatis distinctio consectetur.
-                </p>
-              </div>
-            </div>
-          </div> */}
+
           <div
             className={`flex flex-row justify-center animate__animated + ${
-              inView && "animate__fadeInRight"
+              inView && "animate__pulse"
             }`}
           >
             <Swiper
@@ -152,8 +137,12 @@ const Activity = () => {
               {acData.map((e) => (
                 <SwiperSlide key={e.id} className="">
                   <div className=" p-5 c-sh m-5 rounded-md">
-                    <div className="overflow-hidden rounded-md">
-                      <img src={e.img} alt="" />
+                    <div className="overflow-hidden rounded-md ">
+                      <img
+                        src={e.img}
+                        alt="no img"
+                        className="w-[450px] h-[350px] object-cover"
+                      />
                     </div>
                     <div className="mt-8">
                       <h1 className="text-[26px] font-semibold pb-1">

@@ -6,14 +6,21 @@ import { useState } from "react";
 
 const Nav = () => {
   const [tog, setTog] = useState(false);
-  console.log(tog);
+  const [cc, setCc] = useState({
+    one: true,
+    two: false,
+    three: false,
+    four: false,
+  });
+
+  // console.log(cc.one);
   return (
     <>
       <div className="shadow-md sticky top-0 w-full z-[1000] bg-white">
-        <div className="c-con c-flex py-6 justify-between ">
+        <div className="c-con c-flex py-2 justify-between ">
           <div className="">
-            <HashLink to={"#"} className="c-flex">
-              <div className="w-[60px] rounded-full overflow-hidden select-none cursor-pointer">
+            <HashLink smooth to={"#"} className="c-flex">
+              <div className="w-[60px] rounded-full overflow-hidden select-none cursor-pointer border-4 border-pri">
                 <img src={pp} alt="" />
               </div>
               <h1 className="text-[32px] pl-3 font-semibold">MKN</h1>
@@ -22,19 +29,86 @@ const Nav = () => {
           {/* desktop menus */}
           <div className="c-flex text-[16px] font-medium hidden xl:flex">
             <div className="ml-16 cursor-pointer duration-500 hover:scale-105 ">
-              <HashLink to={"/#"}>Home</HashLink>
+              <HashLink
+                smooth
+                to={"/#"}
+                onClick={() =>
+                  setCc((pre) => ({
+                    one: true,
+                    two: false,
+                    three: false,
+                    four: false,
+                  }))
+                }
+                className={`duration-300 + ${cc.one ? "text-pri" : ""}`}
+              >
+                Home
+              </HashLink>
             </div>
             <div className="ml-16 cursor-pointer duration-500 hover:scale-105">
-              <HashLink to={"/#about"}>About</HashLink>
+              <HashLink
+                smooth
+                to={"/#about"}
+                onClick={() =>
+                  setCc((pre) => ({
+                    one: false,
+                    two: true,
+                    three: false,
+                    four: false,
+                  }))
+                }
+                className={`duration-300 + ${cc.two ? "text-pri" : ""}`}
+              >
+                About
+              </HashLink>
             </div>
             <div className="ml-16 cursor-pointer duration-500 hover:scale-105">
-              <HashLink to={"/#do"}>What I Do</HashLink>
+              <HashLink
+                smooth
+                to={"/#do"}
+                onClick={() =>
+                  setCc((pre) => ({
+                    one: false,
+                    two: false,
+                    three: true,
+                    four: false,
+                  }))
+                }
+                className={`duration-300 + ${cc.three ? "text-pri" : ""}`}
+              >
+                What I Do
+              </HashLink>
             </div>
             <div className="ml-16 cursor-pointer duration-500 hover:scale-105">
-              <HashLink to={"/#activity"}>Team Activity</HashLink>
+              <HashLink
+                smooth
+                to={"/#activity"}
+                onClick={() =>
+                  setCc((pre) => ({
+                    one: false,
+                    two: false,
+                    three: false,
+                    four: true,
+                  }))
+                }
+                className={`duration-300 + ${cc.four ? "text-pri" : ""}`}
+              >
+                Team Activity
+              </HashLink>
             </div>
             <div className="ml-32">
-              <HashLink to={"/#footer"}>
+              <HashLink
+                smooth
+                to={"/#footer"}
+                onClick={() =>
+                  setCc((pre) => ({
+                    one: false,
+                    two: false,
+                    three: false,
+                    four: false,
+                  }))
+                }
+              >
                 <button className="btn c-flex font-medium">
                   <span className="pr-3">Contact</span>
                   <FiPhoneCall className="text-[20px]" />
@@ -55,23 +129,90 @@ const Nav = () => {
         <div className={`duration-500 + ${tog ? `scale-y-100` : `scale-y-0 `}`}>
           <div className="bg-gray-800 w-full min-h-[50vh] absolute top-0 flex flex-col justify-center items-center text-[20px] md:text-[30px] font-semibold text-white">
             <div className="py-2 duration-500 hover:scale-105 cursor-pointer">
-              <HashLink to={"/#"}>Home</HashLink>
+              <HashLink
+                smooth
+                to={"/#"}
+                onClick={() =>
+                  setCc((pre) => ({
+                    one: true,
+                    two: false,
+                    three: false,
+                    four: false,
+                  }))
+                }
+                className={`duration-300 + ${cc.one ? "text-pri" : ""}`}
+              >
+                Home
+              </HashLink>
             </div>
 
             <div className="py-2 duration-500 hover:scale-105 cursor-pointer">
-              <HashLink to={"/#about"}>About</HashLink>
+              <HashLink
+                smooth
+                to={"/#about"}
+                onClick={() =>
+                  setCc((pre) => ({
+                    one: false,
+                    two: true,
+                    three: false,
+                    four: false,
+                  }))
+                }
+                className={`duration-300 + ${cc.two ? "text-pri" : ""}`}
+              >
+                About
+              </HashLink>
             </div>
 
             <div className="py-2 duration-500 hover:scale-105 cursor-pointer">
-              <HashLink to={"/#do"}>What I Do</HashLink>
+              <HashLink
+                smooth
+                to={"/#do"}
+                onClick={() =>
+                  setCc((pre) => ({
+                    one: false,
+                    two: false,
+                    three: true,
+                    four: false,
+                  }))
+                }
+                className={`duration-300 + ${cc.three ? "text-pri" : ""}`}
+              >
+                What I Do
+              </HashLink>
             </div>
 
             <div className="py-2 duration-500 hover:scale-105 cursor-pointer">
-              <HashLink to={"/#activity"}>Team Activity</HashLink>
+              <HashLink
+                smooth
+                to={"/#activity"}
+                onClick={() =>
+                  setCc((pre) => ({
+                    one: false,
+                    two: false,
+                    three: false,
+                    four: true,
+                  }))
+                }
+                className={`duration-300 + ${cc.four ? "text-pri" : ""}`}
+              >
+                Team Activity
+              </HashLink>
             </div>
 
             <div className="py-5 duration-500 hover:scale-105 cursor-pointer">
-              <HashLink to={"/#footer"}>
+              <HashLink
+                smooth
+                to={"/#footer"}
+                onClick={() =>
+                  setCc((pre) => ({
+                    one: false,
+                    two: false,
+                    three: false,
+                    four: false,
+                  }))
+                }
+              >
                 <button className="bg-pri py-1 px-4 text-[17px] md:text-[20px] rounded-md text-white shadow-md c-flex font-medium">
                   <span className="pr-3">Contact</span>
                   <FiPhoneCall className="text-[20px]" />

@@ -1,5 +1,7 @@
 import { useState } from "react";
-import ido from "../images/ido.jpg";
+import cook from "../images/ido.jpg";
+import ac3 from "../images/ac3.jpg";
+import ac10 from "../images/ac10.jpg";
 import { useInView } from "react-intersection-observer";
 
 const Ido = () => {
@@ -15,9 +17,7 @@ const Ido = () => {
     <>
       <div id="do" className="pt-32 w-full" ref={ref}>
         <div className="c-con">
-          <div
-            className={`animate__animated + ${inView && "animate__fadeInLeft"}`}
-          >
+          <div className={`animate__animated + ${inView && "animate__pulse"}`}>
             <h4 className="text-pri font-semibold tracking-[0.3rem] text-[22px] xl:text-[28px] text-center sm:text-left">
               I Work for
             </h4>
@@ -28,13 +28,13 @@ const Ido = () => {
           </div>
           <div className="c-flex justify-center md:justify-between flex-wrap">
             <div
-              className={`w-[60%] md:w-[31%]  overflow-hidden rounded-md relative cursor-pointer shadow-lg duration-500 hover:scale-105 animate__animated + ${
-                inView && "animate__fadeInLeftBig"
+              className={`w-[60%] md:w-[31%]  overflow-hidden rounded-md relative cursor-pointer border-[2px] border-pri group shadow-lg duration-500  animate__animated + ${
+                inView && "animate__pulse"
               }`}
               onClick={() => setActive((e) => ({ ...e, one: !active.one }))}
             >
-              <div className="w-full">
-                <img src={ido} alt="" />
+              <div className="w-full group-hover:scale-110 duration-500">
+                <img src={ac10} alt="" />
               </div>
 
               <div
@@ -48,7 +48,7 @@ const Ido = () => {
                 }`}
               >
                 <h1 className="text-[15px] sm:text-[25px] text-white font-semibold">
-                  Title Hello
+                  Video graph and blogger
                 </h1>
                 <p className="text-[10px] lg:text-[15px] text-white font-medium">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -57,13 +57,13 @@ const Ido = () => {
               </div>
             </div>
             <div
-              className={`w-[60%] md:w-[31%] mt-10 md:mt-0   overflow-hidden rounded-md relative cursor-pointer shadow-lg duration-500 hover:scale-105 animate__animated + ${
-                inView && "animate__fadeInDownBig"
+              className={`w-[60%] md:w-[31%] mt-10 md:mt-0   overflow-hidden rounded-md relative cursor-pointer border-[2px] border-pri group shadow-lg duration-500 hover:scale-105 animate__animated + ${
+                inView && "animate__pulse"
               }`}
               onClick={() => setActive((e) => ({ ...e, two: !active.two }))}
             >
-              <div className="w-full">
-                <img src={ido} alt="" />
+              <div className="w-full group-hover:scale-110 duration-500">
+                <img src={ac3} alt="" />
               </div>
 
               <div
@@ -77,7 +77,7 @@ const Ido = () => {
                 }`}
               >
                 <h1 className="text-[15px] sm:text-[25px] text-white font-semibold">
-                  Title Hello
+                  Drawing
                 </h1>
                 <p className="text-[10px] lg:text-[15px] text-white font-medium">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -86,13 +86,13 @@ const Ido = () => {
               </div>
             </div>
             <div
-              className={`w-[60%] md:w-[31%] mt-10 md:mt-0   overflow-hidden rounded-md relative cursor-pointer shadow-lg duration-500 hover:scale-105 animate__animated + ${
-                inView && "animate__fadeInRightBig"
+              className={`w-[60%] md:w-[31%] mt-10 md:mt-0   overflow-hidden rounded-md relative cursor-pointer border-[2px] border-pri group shadow-lg duration-500 hover:scale-105 animate__animated + ${
+                inView && "animate__pulse"
               }`}
               onClick={() => setActive((e) => ({ ...e, three: !active.three }))}
             >
-              <div className="w-full">
-                <img src={ido} alt="" />
+              <div className="w-full group-hover:scale-110 duration-500">
+                <img src={cook} alt="" />
               </div>
 
               <div
@@ -105,8 +105,8 @@ const Ido = () => {
                   active.three ? "opacity[100]" : "opacity-0"
                 }`}
               >
-                <h1 className="text-[15px] sm:text-[25px] text-white font-semibold">
-                  Title Hello
+                <h1 className="text-[15px] sm:text-[25px] sm:leading-[35px] leading-[25px]  text-white font-semibold">
+                  Counselling Team building Cooking
                 </h1>
                 <p className="text-[10px] lg:text-[15px] text-white font-medium">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
